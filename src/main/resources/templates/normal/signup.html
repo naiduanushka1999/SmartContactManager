@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>this is home page</title>
+</head>
+<body>
+	<section class="addcontactback">
+		<div class="container">
+			<div class="row">
+			
+				<div class="col-md-6 offset-md-3">
+				
+					<div class="my-card mt-1">
+					
+					 <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+  	               	     <p class="text-center" th:text="${session.message.content}"></p>  	               	     
+  	               	     <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+		             </div>
+					
+					
+					<div class="container text-center">
+					
+				   <img style="width: 60px;"  th:src="@{/img/register2.jpg}" alt=""/>
+					
+					</div>
+					
+					  <h3 class="text-center text-white">Add Contact</h3>
+					  
+					 <form  novalidate
+						action="#" 
+							  th:object="${contact}"
+							  enctype="multipart/form-data"
+							  method="POST"
+							  th:action="@{/user/process-contact}"
+							  class="mt-2"
+						>
+					  
+					  	<!-- name field  -->
+					  
+					  
+					  	 <div class="form-group">
+					  	 
+						    <img style="width: 40px;"  th:src="@{/img/name2.png}" alt=""/>
+						    
+						    <input 
+						      name="name"
+						      type="text"
+						      class="form-control "
+						      th:classappend="${#fields.hasErrors('name') ? 'is-invalid':''}"
+						      id="name_field" 
+						      aria-describedby="emailHelp"
+						      placeholder="Enter name"
+						      required
+						      th:value="${contact.name}"
+						       
+						       />
+						       
+						       
+						        <div class="invalid-feedback" th:each="e : ${#fields.errors('name')}" th:text="${e}">
+       								 
+     							 </div>
+						    
+						    
+  						</div>
+  						<!-- address field  -->
+  						
+  						<div class="form-group">
+					  	 
+						    <img style="width: 40px;"  th:src="@{/img/name2.png}" alt=""/>
+						    
+						    <input 
+						      name="address"
+						      type="text"
+						      class="form-control "
+						      th:classappend="${#fields.hasErrors('address') ? 'is-invalid':''}"
+						      id="name_field" 
+						      aria-describedby="emailHelp"
+						      placeholder="Enter address"
+						      required
+						      th:value="${contact.address}"
+						       
+						       />
+						       
+						       
+						        <div class="invalid-feedback" th:each="e : ${#fields.errors('address')}" th:text="${e}">
+       								 
+     							 </div>
+						    
+						    
+  						</div>
+  						
+  						
+  						<!-- phone field  -->
+					  
+					  
+					  	 <div class="form-group">
+					  	 
+						    <img style="width: 40px;"  th:src="@{/img/phoneimg.png}" alt=""/>
+						    
+						    <input 
+						    
+						      name="phone"
+						      type="text"
+						      class="form-control"
+						      th:classappend="${#fields.hasErrors('phone') ? 'is-invalid':''}"
+						      id="password_field" 
+						      aria-describedby="emailHelp"
+						      placeholder="Enter phone"
+						      required
+						        th:value="${contact.phone}"
+						       />
+						    <div class="invalid-feedback" th:each="e : ${#fields.errors('phone')}" th:text="${e}">
+       								 
+     							 </div>
+						    
+  						</div>
+  						
+  						
+  						
+					  
+					  	<!-- email field  -->
+					  
+					  
+					  	 <div class="form-group">
+					  	 
+						    <img style="width: 40px;"  th:src="@{/img/email3.png}" alt=""/>
+						    
+						    <input 
+						     name="email"
+						      type="email"
+						      class="form-control"
+						       th:classappend="${#fields.hasErrors('email') ? 'is-invalid':''}"
+						      id="email_field" 
+						      aria-describedby="emailHelp"
+						      placeholder="Enter email"
+						      required
+						      th:value="${contact.email}"
+						       />
+						    
+						        <div class="invalid-feedback" th:each="e : ${#fields.errors('email')}" th:text="${e}">
+       								 
+     							 </div>
+						    
+  						</div>
+					  
+					  
+					  <!-- address field  -->
+  						
+  						<div class="form-group">
+					  	 
+						    <img style="width: 40px;"  th:src="@{/img/name2.png}" alt=""/>
+						    
+						    <input 
+						      name="work"
+						      type="text"
+						      class="form-control "
+						      th:classappend="${#fields.hasErrors('work') ? 'is-invalid':''}"
+						      id="name_field" 
+						      aria-describedby="emailHelp"
+						      placeholder="Enter work"
+						      required
+						      th:value="${contact.work}"
+						       
+						       />
+						       
+						       
+						        <div class="invalid-feedback" th:each="e : ${#fields.errors('work')}" th:text="${e}">
+       								 
+     							 </div>
+						    
+						    
+  						</div>
+					  	 
+  						
+  						
+  						
+  						
+  						<!-- user about field -->
+  						
+  						<div class="form-group">
+  						      <img style="width: 35px;"  th:src="@{/img/write2.png}" alt=""/>
+  							<textarea name="about" th:text="${contact.description}"  placeholder="Enter contact description"   rows="6" class="form-control"
+  							 th:value="${contact.description}"></textarea>
+  						
+  						</div>
+  						
+  						<!-- profile field -->
+  						
+  						 <label  class="form-label text-white"> Choose profile picture</label>
+  						<div class="custom-file text-white">							
+							<input type="file" name="image" th:value="${contact.image}"/>	
+							<div class="invalid-feedback" th:each="e : ${#fields.errors('image')}" th:text="${e}">
+       								 
+     							 </div>					  
+						</div>
+  						
+  						
+  						
+  						
+  						<div class="container text-center" style="padding-bottom: 5%;">
+							
+						 <button class="btn bg-primary text-white">Save Contact</button>
+						
+						</div>
+						
+					  
+					  
+					  </form>
+				
+					
+					</div>
+				
+				</div>
+			
+			
+			</div>
+		
+		</div>
+	
+	</section>
+</body>
+</html>

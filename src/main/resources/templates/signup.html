@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>this is home page</title>
+</head>
+<body>
+	<section class="banner-signup">
+		<div class="container">
+			<div class="row">
+			
+				<div class="col-md-6 offset-md-3">
+				
+					<div class="my-card mt-1">
+					
+					 <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+  	               	     <p class="text-center" th:text="${session.message.content}"></p>  	               	     
+  	               	     <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+		             </div>
+					
+					
+					<div class="container text-center">
+					
+				   <img style="width: 60px;"  th:src="@{/img/register2.jpg}" alt=""/>
+					
+					</div>
+					
+					  <h3 class="text-center text-white">Register Now!</h3>
+					  
+					  <form  novalidate action="" th:action="@{/do_register}" method="post" th:object="${user}" >
+					  
+					  
+					  	<!-- name field  -->
+					  
+					  
+					  	 <div class="form-group">
+					  	 
+						    <img style="width: 40px;"  th:src="@{/img/name2.png}" alt=""/>
+						    
+						    <input 
+						      name="name"
+						      type="text"
+						      class="form-control "
+						      th:classappend="${#fields.hasErrors('name') ? 'is-invalid':''}"
+						      id="name_field" 
+						      aria-describedby="emailHelp"
+						      placeholder="Enter name"
+						      required
+						      th:value="${user.name}"
+						       
+						       />
+						       
+						       
+						        <div class="invalid-feedback" th:each="e : ${#fields.errors('name')}" th:text="${e}">
+       								 
+     							 </div>
+						    
+						    
+  						</div>
+					  
+					  	<!-- email field  -->
+					  
+					  
+					  	 <div class="form-group">
+					  	 
+						    <img style="width: 40px;"  th:src="@{/img/email3.png}" alt=""/>
+						    
+						    <input 
+						     name="email"
+						      type="email"
+						      class="form-control"
+						       th:classappend="${#fields.hasErrors('email') ? 'is-invalid':''}"
+						      id="email_field" 
+						      aria-describedby="emailHelp"
+						      placeholder="Enter email"
+						      required
+						      th:value="${user.email}"
+						       />
+						    
+						        <div class="invalid-feedback" th:each="e : ${#fields.errors('email')}" th:text="${e}">
+       								 
+     							 </div>
+						    
+  						</div>
+					  	<!-- password field  -->
+					  
+					  
+					  	 <div class="form-group">
+					  	 
+						    <img style="width: 40px;"  th:src="@{/img/password4.png}" alt=""/>
+						    
+						    <input 
+						    
+						      name="password"
+						      type="password"
+						      class="form-control"
+						        th:classappend="${#fields.hasErrors('password') ? 'is-invalid':''}"
+						      id="password_field" 
+						      aria-describedby="emailHelp"
+						      placeholder="Enter password"
+						     
+						      required
+						      
+						       />
+						        <div class="invalid-feedback" th:each="e : ${#fields.errors('password')}" th:text="${e}">
+       								 
+     							 </div>
+						    
+						    
+  						</div>
+  						
+  						<!-- phone field  -->
+					  
+					  
+					  	 <div class="form-group">
+					  	 
+						    <img style="width: 40px;"  th:src="@{/img/phoneimg.png}" alt=""/>
+						    
+						    <input 
+						    
+						      name="phone"
+						      type="text"
+						      class="form-control"
+						      th:classappend="${#fields.hasErrors('phone') ? 'is-invalid':''}"
+						      id="password_field" 
+						      aria-describedby="emailHelp"
+						      placeholder="Enter phone"
+						      required
+						        th:value="${user.phone}"
+						       />
+						    <div class="invalid-feedback" th:each="e : ${#fields.errors('phone')}" th:text="${e}">
+       								 
+     							 </div>
+						    
+  						</div>
+  						
+  						
+  						
+  						
+  						<!-- user about field -->
+  						
+  						<div class="form-group">
+  						      <img style="width: 35px;"  th:src="@{/img/write2.png}" alt=""/>
+  							<textarea name="about" th:text="${user.about}"  placeholder="Enter something yourself"   rows="6" class="form-control"
+  							 th:value="${user.about}"></textarea>
+  						
+  						</div>
+  						
+  						<!-- profile field -->
+  						
+  						 <label  class="form-label text-white"> Choose profile picture</label>
+  						<div class="custom-file text-white">							
+							<input type="file" name="imageUrl" th:value="${user.imageUrl}"/>	
+							<div class="invalid-feedback" th:each="e : ${#fields.errors('imageUrl')}" th:text="${e}">
+       								 
+     							 </div>					  
+						</div>
+  						
+  						
+  						<!-- terms and condition agreement  -->
+  						
+  						
+  						<div class="form-group form-check text-center text-white">
+  						
+  								<input type="checkbox" 
+  								name="agreement"
+  								class="form-check-input"
+  								id="agreement"
+  								
+  								/>	
+  								
+  								<label for="agreement">Accept terms and conditions</label>
+  									
+  									
+  						
+  						</div>
+  						
+  						<div class="container text-center">
+  						
+  						<button type="submit" class="btn bg-primary  text-white">
+  							Submit
+  						</button>
+  						<button type="reset" class="btn btn-warning text-white">
+  							Reset
+  						</button>
+  						
+  						</div>
+					  
+					  
+					  
+					  </form>
+				
+					
+					</div>
+				
+				</div>
+			
+			
+			</div>
+		
+		</div>
+	
+	</section>
+</body>
+</html>

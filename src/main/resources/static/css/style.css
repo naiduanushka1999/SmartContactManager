@@ -1,0 +1,194 @@
+.admindash {
+	
+  background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(../img/userdashnew1.gif);	
+	height: 600px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.userdash {
+	
+  background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(../img/userdash.jpg);	
+	height: 600px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+.bg-primary {
+	background: #05386B!important;
+}
+
+.banner {
+	width: 100%;
+	height: 100vh;
+		background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(../img/homepage10.jpg);
+	background-size: cover;
+	color: white;
+}
+
+.my-card {
+	padding: 20px;
+	/*background: #FFFFFF;*/
+}
+
+#login .container #login-row #login-column #login-box {
+	margin-top: 20px;
+	max-width: 600px;
+	height: 420px
+	/*border: 1px solid #9C9C9C*/
+	/*background-color: white;*/
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+	padding: 20px;
+}
+
+#login .container #login-row #login-column #login-box #login-form #register-link
+	{
+	margin-top: -85px;
+}
+
+/* sidebar style */
+@media only screen and (max-width: 600px) {
+	.sidebar {
+		display: none;
+		width: 80% !important;
+		background: #05386B!important;
+		height: 100vh;
+		position: fixed;
+		padding-top: 20px;
+	}
+	.content {
+		margin-left: 0% !important;
+	}
+}
+
+.sidebar {
+	width: 18%;
+	background: #05386B!important;
+	height: 100%;
+	position: fixed;
+	padding-top: 45px;
+	z-index: 999999999999999999999999999;
+}
+
+.sidebar a {
+	display: block;
+	width: 100%;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: white;
+}
+
+.sidebar a:hover {
+	background: #FAB005;
+}
+
+.sidebar .divider {
+	height: .5px;
+	width: 100%;
+	background:black;
+	margin-top: 10px;
+}
+
+.content {
+	margin-left: 18%;
+}
+
+.sidebar .crossBtn{
+	position: absolute;
+	top: 0;
+	right: 35px;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+.my_profile_picture{
+	width: 35px;
+	height: 35px;
+	object-fit:cover;
+	border-radius:50%;
+	
+}
+
+.my_own_profile{
+	width: 60px;
+	height: 60px;
+	object-fit:cover;
+	border-radius:50%;
+}
+
+/*  search css */
+
+.search-container{
+	position: relative;
+}
+.search-result{
+	position: absolute;
+	background:white;
+	width: 100%;
+	padding:10px;
+	border: 1px solid gray;
+	display: none;
+}
+
+.active{
+	
+	color:white!important;
+}
+
+.banner-signup{
+	background:linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.4)),url(../img/registrationback1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	
+}
+.banner-login{
+	background:linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.4)),url(../img/loginback1.jpg);
+   background-size: cover;
+    background-position: right;
+   height: 600px;
+background-repeat: no-repeat;
+	
+}
+
+
+.profilebg{
+	background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(../img/yellowfinal.jpg);
+	 background-size: cover;
+	  background-position: left;
+	background-repeat: no-repeat;
+  height: 800px;
+    
+}
+
+.adminprofilebg{
+	background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(../img/adminback1.jpg);
+	 background-size: cover;
+	  background-position: left;
+	background-repeat: no-repeat;
+  height: 600px;
+ 
+    
+}
+
+.profilebgg{
+	background-color: white;
+	height: 710px;
+}
+
+.adminback{
+	background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../img/newback3.jpg);
+    background-size: cover;
+}
+
+.btn-primary{
+	color: yellow;
+}
+
+.addcontactback{
+	background-color: white;
+}
+
