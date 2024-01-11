@@ -127,7 +127,7 @@ public class AdminController {
 	@Transactional
 	public String deactivateUser(@PathVariable("cid") Integer cId, Model model, HttpSession session,
 			Principal principal) {
-		System.out.println("CID " + cId);
+		System.out.println("CID_ " + cId);
 		String ruser=principal.getName();
 		System.out.println(ruser);
 		
