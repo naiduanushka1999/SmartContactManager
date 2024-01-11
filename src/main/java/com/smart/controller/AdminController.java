@@ -135,6 +135,7 @@ public class AdminController {
 		// check...Assignment..image delete
 
 		// delete old photo
+		//delete old photo
 
 		User user = this.userRepository.getOne(cId);
 		if(user.isEnabled()==true) {
